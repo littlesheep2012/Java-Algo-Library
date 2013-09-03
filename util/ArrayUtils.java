@@ -238,4 +238,94 @@ public class ArrayUtils {
 
         return low;
     }
+
+    /** max element **/
+    public int maxElement(int[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] > array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public int maxElement(long[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] > array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public int maxElement(double[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] > array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public <T extends Comparable<T>> int maxElement(T[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i].compareTo(array[index]) > 0) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    /** min element **/
+    public int minElement(int[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] < array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public int minElement(long[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] < array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public int minElement(double[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] < array[index]) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
+    public <T extends Comparable<T>> int minElement(T[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i].compareTo(array[index]) < 0) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
 }
