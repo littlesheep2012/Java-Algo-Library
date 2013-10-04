@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Array Util
  *
- * @author sheepforever@gmail.com (Yang Xiao)
+ * @author sheep
  */
 public class ArrayUtils {
 
@@ -40,7 +40,20 @@ public class ArrayUtils {
         array[j] = temp;
     }
 
+
+    public static void swap(char[] array, int i, int j) {
+        char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
     /** reverse **/
+    public static void reverse(char[] array) {
+        for (int i = 0; i < array.length - 1 - i; ++i) {
+            swap(array, i, array.length - 1 - i);
+        }
+    }
+
     public static <T> void reverse(T[] array) {
         for (int i = 0; i < array.length - 1 - i; ++i) {
             swap(array, i, array.length - 1 - i);
@@ -240,7 +253,7 @@ public class ArrayUtils {
     }
 
     /** max element **/
-    public int maxElement(int[] array) {
+    public static int maxElement(int[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] > array[index]) {
@@ -251,7 +264,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public int maxElement(long[] array) {
+    public static int maxElement(long[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] > array[index]) {
@@ -262,7 +275,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public int maxElement(double[] array) {
+    public static int maxElement(double[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] > array[index]) {
@@ -273,7 +286,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public <T extends Comparable<T>> int maxElement(T[] array) {
+    public static <T extends Comparable<T>> int maxElement(T[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i].compareTo(array[index]) > 0) {
@@ -285,7 +298,7 @@ public class ArrayUtils {
     }
 
     /** min element **/
-    public int minElement(int[] array) {
+    public static int minElement(int[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] < array[index]) {
@@ -296,7 +309,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public int minElement(long[] array) {
+    public static int minElement(long[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] < array[index]) {
@@ -307,7 +320,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public int minElement(double[] array) {
+    public static int minElement(double[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] < array[index]) {
@@ -318,7 +331,7 @@ public class ArrayUtils {
         return index;
     }
 
-    public <T extends Comparable<T>> int minElement(T[] array) {
+    public static <T extends Comparable<T>> int minElement(T[] array) {
         int index = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i].compareTo(array[index]) < 0) {
@@ -327,5 +340,21 @@ public class ArrayUtils {
         }
 
         return index;
+    }
+
+    /** reverse permutation **/
+    public static int[] reversePermutation(int[] permutation) {
+        int[] result = new int[permutation.length];
+        for (int i = 0; i < permutation.length; i++)
+            result[permutation[i]] = i;
+        return result;
+    }
+
+    /** reverse permutation **/
+    public static Integer[] reversePermutation(Integer[] permutation) {
+        Integer[] result = new Integer[permutation.length];
+        for (int i = 0; i < permutation.length; i++)
+            result[permutation[i]] = i;
+        return result;
     }
 }
