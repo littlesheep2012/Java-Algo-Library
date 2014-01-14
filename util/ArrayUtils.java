@@ -357,4 +357,24 @@ public class ArrayUtils {
             result[permutation[i]] = i;
         return result;
     }
+
+    public static long[] toLongArray(int[] arr) {
+        long[] result = new long[arr.length];
+        for (int i = 0; i < arr.length; ++i) {
+            result[i] = arr[i];
+        }
+        return result;
+    }
+
+    public static int[] toIntArray(long[] arr) {
+        int[] result = new int[arr.length];
+        for (int i = 0; i < arr.length; ++i) {
+            if (arr[i] > Integer.MAX_VALUE) {
+                throw new NumberFormatException();
+            }
+            result[i] = (int) arr[i];
+        }
+
+        return result;
+    }
 }
