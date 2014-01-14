@@ -7,8 +7,6 @@ import java.util.StringTokenizer;
 
 /**
  * InputReader for fast IO operations
- *
- * @author sheepforever@gmail.com (Yang Xiao)
  */
 public class InputReader {
     BufferedReader reader;

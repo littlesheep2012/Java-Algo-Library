@@ -1,5 +1,7 @@
 package sheep.datastructure.intervaltree;
 
+import sheep.datastructure.IntRangeMinimumQuery;
+
 import java.util.Arrays;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Arrays;
  * @author sheep
  */
 public class MaxValueIntegerIntervalTree extends IntegerIntervalTree
-    implements IntegerRangeMinimumQuery {
+    implements IntRangeMinimumQuery {
 
     public MaxValueIntegerIntervalTree(int size) {
         super(size);
@@ -55,7 +57,7 @@ public class MaxValueIntegerIntervalTree extends IntegerIntervalTree
     }
 
     @Override
-    public Integer get(int left, int right) {
+    public int get(int left, int right) {
         return getMinimumValue(left, right);
     }
 }

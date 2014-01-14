@@ -1,15 +1,9 @@
 package sheep.math;
 
-import sheep.util.ArrayUtils;
-
 import java.util.Arrays;
 
 /**
- * Created with IntelliJ IDEA.
- * User: sheep
- * Date: 14-1-10
- * Time: 下午9:24
- * To change this template use File | Settings | File Templates.
+ * Number (Theory) related methods
  */
 public class NumberUtils {
 
@@ -89,6 +83,26 @@ public class NumberUtils {
     }
 
     public static int[] generatePrimes(int upTo) {
-        return null;
+        boolean[] isPrime = new boolean[upTo + 1];
+        int[] primes = new int[upTo + 1];
+
+        int count = 0;
+        Arrays.fill(isPrime, true);
+        for (int i = 2; i <= upTo; ++i) {
+            if (isPrime[i]) {
+                ++count;
+                for (int j = 0; j < count && i * primes[j] <= upTo; ++j) {
+                    isPrime[i * primes[j]] = false;
+                    if (i % primes[j] == 0) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        int[] result = new int[count];
+        System.arraycopy(primes, 0, result, 0, count);
+
+        return result;
     }
 }

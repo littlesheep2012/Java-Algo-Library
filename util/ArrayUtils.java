@@ -3,13 +3,10 @@ package sheep.util;
 import java.util.Arrays;
 
 /**
- * Array Util
- *
- * @author sheep
+ * Array Utilities
  */
 public class ArrayUtils {
 
-    /** swap **/
     public static <T> void swap(T[] array, int i, int j) {
         T temp = array[i];
         array[i] = array[j];
@@ -84,7 +81,6 @@ public class ArrayUtils {
         }
     }
 
-    /** fill **/
     public static <T> void fill(T[][] array, T value) {
         for (int i = 0; i < array.length; ++i) {
             Arrays.fill(array[i], value);
@@ -142,207 +138,6 @@ public class ArrayUtils {
         }
     }
 
-    /** lower bound **/
-    public static int lowerBound(int[] array, int value) {
-        if (array.length > 0 && array[array.length - 1] < value) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid] >= value) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    public static long lowerBound(long[] array, long value) {
-        if (array.length > 0 && array[array.length - 1] < value) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid] >= value) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    public static <T extends Comparable<T>> int lowerBound(T[] array, T value) {
-        if (array.length > 0 && array[array.length - 1].compareTo(value) < 0) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid].compareTo(value) >= 0) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    /** upper bound **/
-    public static int upperBound(int[] array, int value) {
-        if (array.length > 0 && array[array.length - 1] <= value) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid] > value) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    public static long upperBound(long[] array, long value) {
-        if (array.length > 0 && array[array.length - 1] <= value) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid] > value) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    public static <T extends Comparable<T>> int upperBound(T[] array, T value) {
-        if (array.length > 0 && array[array.length - 1].compareTo(value) <= 0) {
-            return array.length;
-        }
-
-        int low = 0, high = array.length - 1;
-        while (low < high) {
-            int mid = (low + high) >> 1;
-            if (array[mid].compareTo(value) > 0) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
-    }
-
-    /** max element **/
-    public static int maxElement(int[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] > array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static int maxElement(long[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] > array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static int maxElement(double[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] > array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static <T extends Comparable<T>> int maxElement(T[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i].compareTo(array[index]) > 0) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    /** min element **/
-    public static int minElement(int[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] < array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static int minElement(long[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] < array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static int minElement(double[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i] < array[index]) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    public static <T extends Comparable<T>> int minElement(T[] array) {
-        int index = 0;
-        for (int i = 1; i < array.length; ++i) {
-            if (array[i].compareTo(array[index]) < 0) {
-                index = i;
-            }
-        }
-
-        return index;
-    }
-
-    /** reverse permutation **/
     public static int[] reversePermutation(int[] permutation) {
         int[] result = new int[permutation.length];
         for (int i = 0; i < permutation.length; i++)
@@ -350,7 +145,6 @@ public class ArrayUtils {
         return result;
     }
 
-    /** reverse permutation **/
     public static Integer[] reversePermutation(Integer[] permutation) {
         Integer[] result = new Integer[permutation.length];
         for (int i = 0; i < permutation.length; i++)

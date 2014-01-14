@@ -1,9 +1,7 @@
 package sheep.datastructure;
 
 /**
- * Int RMQ
- *
- * @author sheep
+ * Int {@link RangeMinimumQuery}
  */
 public interface IntRangeMinimumQuery {
     int get(int left, int right);
