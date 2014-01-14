@@ -1,4 +1,4 @@
-package sheep.util.datastructure;
+package sheep.datastructure.intervaltree;
 
 /**
  * Abstruct Integer Interval Tree
