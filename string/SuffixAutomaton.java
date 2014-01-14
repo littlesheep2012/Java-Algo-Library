@@ -13,14 +13,15 @@ public class SuffixAutomaton {
     public int totalNodes;
 
     public class SuffixAutomatonNode{
-        SuffixAutomatonNode suffixNode;
-        SuffixAutomatonNode ch[];
+        public SuffixAutomatonNode suffixNode;
+        public SuffixAutomatonNode ch[];
 
-        int tag, sum;
-        int deg;
-        int maximumLength;
-        int positions;
-        int id;
+        public int tag, sum;
+        public int deg;
+        public int maximumLength;
+        public int positions;
+        public int id;
+
         SuffixAutomatonNode() {
             suffixNode = null;
             ch = new SuffixAutomatonNode[ALPHA];
@@ -34,10 +35,10 @@ public class SuffixAutomaton {
         }
     }
 
-    SuffixAutomatonNode root;
-    SuffixAutomatonNode lastNode;
+    public SuffixAutomatonNode root;
+    public SuffixAutomatonNode lastNode;
 
-    ArrayList<SuffixAutomatonNode> list;
+    public ArrayList<SuffixAutomatonNode> list;
 
     public SuffixAutomaton(int ALPHA) {
         this.ALPHA = ALPHA;
