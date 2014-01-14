@@ -1,2 +1,2 @@
-Standard-Code-Library
+Java-Algo-Library
 =====================
